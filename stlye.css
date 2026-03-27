@@ -1,0 +1,358 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*ajuda na fonte */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .page.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Todo background */
+        .background {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1758274538961-fe8f1f24166f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZW50YWwlMjBoZWFsdGglMjBwZWFjZWZ1bCUyMG5hdHVyZSUyMG1lZGl0YXRpb258ZW58MXx8fHwxNzczNjgyODIwfDA&ixlib=rb-4.1.0&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(5, 150, 105, 0.7) 50%, rgba(13, 148, 136, 0.8) 100%);
+        }
+
+        /* elementos decorativos */
+        .decoration-top {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            width: 8rem;
+            height: 8rem;
+            background: rgba(52, 211, 153, 0.2);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .decoration-bottom {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            width: 10rem;
+            height: 10rem;
+            background: rgba(45, 212, 191, 0.2);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        /* card de cadastro */
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 28rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-icon svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: white;
+            fill: white;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #047857;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: #059669;
+        }
+
+        /* cabeçelho */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #4b5563;
+        }
+
+        /* elementos */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #059669;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+            border: 1.5px solid #a7f3d0;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #059669;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        /* botão */
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #047857;
+            border: 2px solid #6ee7b7;
+        }
+
+        .btn-outline:hover {
+            background: #ecfdf5;
+        }
+
+        /* Links */
+        .link {
+            color: #059669;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .link:hover {
+            color: #047857;
+        }
+
+        .link-small {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* caixa de check */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .checkbox {
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #6ee7b7;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            margin-top: 0.25rem;
+        }
+
+        .checkbox:checked {
+            background: #059669;
+            border-color: #059669;
+        }
+
+        .checkbox-label {
+            font-size: 0.875rem;
+            color: #4b5563;
+            cursor: pointer;
+            line-height: 1.25;
+        }
+
+        /* suporte box */
+        .support-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.75rem;
+        }
+
+        .support-content {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .support-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #059669;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .support-text {
+            font-size: 0.75rem;
+            color: #065f46;
+        }
+
+        /* roda pé */
+        .footer {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        /* botão do fundo */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #059669;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-button:hover {
+            color: #047857;
+        }
+
+        .back-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* */
+        .success-icon-wrapper {
+            width: 4rem;
+            height: 4rem;
+            background: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .success-icon {
+            width: 2rem;
+            height: 2rem;
+            color: #059669;
+        }
+
+        .info-box {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-text {
+            font-size: 0.875rem;
+            color: #065f46;
+        }
+
+        /* Link de esqueçeu a senha*/
+        .label-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
